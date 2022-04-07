@@ -34,17 +34,11 @@ def read_and_split(filename):
     training_set = pd.concat([type1_train, type2_train, type3_train])
     testing_set = pd.concat([type1_test, type2_test, type3_test])
 
-    #print(testing_set.shape)
-    #print(training_set.shape)
-
     training_set.to_csv('training_set.csv')
     testing_set.to_csv('testing_set.csv')
 
     return training_set, testing_set
     
-   # print(file.head(5))
-
- 
 def Preprocess(data):
     dataset = data.to_numpy()
     x_dataset = dataset[:, 1:] #features
@@ -189,12 +183,9 @@ def MAP(data, dis):
             
             
 def plot_it(data):
-    #test_data = data.to_numpy()
-    #data = pd.DataFrame(data)
-    #print(data)
     X = data.drop('Label', axis=1)
     y = data['Label']
-    #print(y)
+
 
     fig = plt.figure(figsize=(12,6))
     markers = ['s', 'x', 'o']
